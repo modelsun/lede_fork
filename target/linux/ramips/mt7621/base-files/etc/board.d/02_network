@@ -26,6 +26,7 @@ ramips_setup_interfaces()
 	xiaomi,mi-router-3-pro|\
 	xiaomi,mi-router-cr660x)
 		ucidef_set_interfaces_lan_wan "lan1 lan2 lan3" "wan"
+                ucidef_set_interface_lan "eth0.1 ra0 rai0 "
 		;;
 	asiarf,ap7621-001|\
 	winstars,ws-wn583a6)
