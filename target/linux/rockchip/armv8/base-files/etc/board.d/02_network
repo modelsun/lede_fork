@@ -10,6 +10,7 @@ rockchip_setup_interfaces()
 	case "$board" in
 	embedfire,doornet1|\
 	embedfire,doornet2|\
+	fastrhino,r66s|\
 	friendlyarm,nanopi-r2c|\
 	friendlyarm,nanopi-r2s|\
 	friendlyarm,nanopi-r4s|\
@@ -18,6 +19,9 @@ rockchip_setup_interfaces()
 	xunlong,orangepi-r1-plus|\
 	xunlong,orangepi-r1-plus-lts)
 		ucidef_set_interfaces_lan_wan 'eth1' 'eth0'
+		;;
+	friendlyelec,nanopi-r5s)
+		ucidef_set_interfaces_lan_wan "eth1 eth2" "eth0"
 		;;
 	*)
 		ucidef_set_interface_lan 'eth0'
@@ -42,6 +46,7 @@ rockchip_setup_macs()
 	case "$board" in
 	embedfire,doornet1|\
 	embedfire,doornet2|\
+	fastrhino,r66s|\
 	friendlyarm,nanopi-r2c|\
 	friendlyarm,nanopi-r2s|\
 	sharevdi,guangmiao-g4c)
